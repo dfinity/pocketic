@@ -39,8 +39,8 @@ Note that older versions might not be avalable 6 months after they have been rel
 
 | Version   | Release Date | Linux  | macOS	| Changes |
 |---        |---           |---     |---    |---      |
-| 2.0.0	    | 2023-11-XX   | download  	|  download 	| CHANGELOG.md |
-| 1.0.0	    | 2023-10-12   | [download](https://download.dfinity.systems/ic/307d5847c1d2fe1f5e19181c7d0fcec23f4658b3/openssl-static-binaries/x86_64-linux/pocket-ic.gz) | [download](https://download.dfinity.systems/ic/307d5847c1d2fe1f5e19181c7d0fcec23f4658b3/openssl-static-binaries/x86_64-darwin/pocket-ic.gz)   | [CHANGELOG.md](CHANGELOG.md##1.0.0---2023-10-12)|
-| 0.1.0	    | 2023-08-31   | [download](https://download.dfinity.systems/ic/865a816108b31956bd449282e5803ce40007789f/openssl-static-binaries/x86_64-linux/pocket-ic.gz) | [download](https://download.dfinity.systems/ic/865a816108b31956bd449282e5803ce40007789f/openssl-static-binaries/x86_64-darwin/pocket-ic.gz)   | [CHANGELOG.md](CHANGELOG.md##0.1.0---2023-08-31)|
+| 2.0.0	    | 2023-11-XX   | download  	|  download 	| [CHANGELOG.md](CHANGELOG.md#200---2023-11-xx) |
+| 1.0.0	    | 2023-10-12   | [download](https://download.dfinity.systems/ic/307d5847c1d2fe1f5e19181c7d0fcec23f4658b3/openssl-static-binaries/x86_64-linux/pocket-ic.gz) | [download](https://download.dfinity.systems/ic/307d5847c1d2fe1f5e19181c7d0fcec23f4658b3/openssl-static-binaries/x86_64-darwin/pocket-ic.gz)   | [CHANGELOG.md](CHANGELOG.md#100---2023-10-12)|
+| 0.1.0	    | 2023-08-31   | [download](https://download.dfinity.systems/ic/865a816108b31956bd449282e5803ce40007789f/openssl-static-binaries/x86_64-linux/pocket-ic.gz) | [download](https://download.dfinity.systems/ic/865a816108b31956bd449282e5803ce40007789f/openssl-static-binaries/x86_64-darwin/pocket-ic.gz)   | [CHANGELOG.md](CHANGELOG.md#010---2023-08-31)|
 
 
