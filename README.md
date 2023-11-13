@@ -41,3 +41,6 @@ To write canister tests in your projects with PocketIC, it is recommended to use
 * [Pic JS for JavaScript/TypeScript](https://www.npmjs.com/package/@hadronous/pic)
 
 If you want your client library to be listed here, please post to the [Forum](https://forum.dfinity.org/)!
+
+## Source Code
+The source code of PocketIC is available on [GitHub](https://github.com/dfinity/ic/tree/master/rs/pocket_ic_server).
