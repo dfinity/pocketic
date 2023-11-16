@@ -2,8 +2,8 @@
 
 PocketIC is a canister smart contract testing solution for the [Internet Computer](https://internetcomputer.org/).
 
-## Download
-You can find the versions of the PocketIC server binary below.
+## Download the PocketIC Server
+You can find the versions of the PocketIC server below.
 Note that older versions might not be available 6 months after they have been released.
 
 | Version   | Release Date | Linux  | macOS	| Changes |
@@ -36,9 +36,9 @@ which prints information on how to use the PocketIC server from the command line
 ### Client Libraries
 To write canister tests in your projects with PocketIC, it is recommended to use one of the client libraries. The following libraries are available:
 
-* [PocketIC for Rust](https://crates.io/crates/pocket-ic)
-* [PocketIC for Python](https://pypi.org/project/pocket-ic/)
-* [Pic JS for JavaScript/TypeScript](https://www.npmjs.com/package/@hadronous/pic)
+* [PocketIC Rust](https://crates.io/crates/pocket-ic)
+* [PocketIC Python](https://pypi.org/project/pocket-ic/)
+* [Pic JS](https://www.npmjs.com/package/@hadronous/pic) for JavaScript/TypeScript
 
 If you want your client library to be listed here, please post to the [Forum](https://forum.dfinity.org/)!
 
