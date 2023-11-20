@@ -2,15 +2,16 @@
 
 PocketIC is a canister smart contract testing solution for the [Internet Computer](https://internetcomputer.org/).
 
+
 ## Download the PocketIC Server
 You can find the versions of the PocketIC server below.
 Note that older versions might not be available 6 months after they have been released.
 
 | Version   | Release Date | Linux  | macOS	| Changes |
 |---        |---           |---     |---    |---      |
-| 2.0.0	    | 2023-11-XX   | download  	|  download 	| [CHANGELOG.md](CHANGELOG.md#200---2023-11-xx) |
-| 1.0.0	    | 2023-10-12   | [download](https://download.dfinity.systems/ic/307d5847c1d2fe1f5e19181c7d0fcec23f4658b3/openssl-static-binaries/x86_64-linux/pocket-ic.gz) | [download](https://download.dfinity.systems/ic/307d5847c1d2fe1f5e19181c7d0fcec23f4658b3/openssl-static-binaries/x86_64-darwin/pocket-ic.gz)   | [CHANGELOG.md](CHANGELOG.md#100---2023-10-12)|
-| 0.1.0	    | 2023-08-31   | [download](https://download.dfinity.systems/ic/865a816108b31956bd449282e5803ce40007789f/openssl-static-binaries/x86_64-linux/pocket-ic.gz) | [download](https://download.dfinity.systems/ic/865a816108b31956bd449282e5803ce40007789f/openssl-static-binaries/x86_64-darwin/pocket-ic.gz)   | [CHANGELOG.md](CHANGELOG.md#010---2023-08-31)|
+| 2.0.0	    | 2023-11-21   | [download](https://download.dfinity.systems/ic/29ec86dc9f9ca4691d4d4386c8b2aa41e14d9d16/openssl-static-binaries/x86_64-linux/pocket-ic.gz) | [download](https://download.dfinity.systems/ic/29ec86dc9f9ca4691d4d4386c8b2aa41e14d9d16/openssl-static-binaries/x86_64-darwin/pocket-ic.gz) | [CHANGELOG.md](CHANGELOG.md#200---2023-11-21) |
+| 1.0.0	    | 2023-10-12   | [download](https://download.dfinity.systems/ic/307d5847c1d2fe1f5e19181c7d0fcec23f4658b3/openssl-static-binaries/x86_64-linux/pocket-ic.gz) | [download](https://download.dfinity.systems/ic/307d5847c1d2fe1f5e19181c7d0fcec23f4658b3/openssl-static-binaries/x86_64-darwin/pocket-ic.gz) | [CHANGELOG.md](CHANGELOG.md#100---2023-10-12)|
+| 0.1.0	    | 2023-08-31   | [download](https://download.dfinity.systems/ic/865a816108b31956bd449282e5803ce40007789f/openssl-static-binaries/x86_64-linux/pocket-ic.gz) | [download](https://download.dfinity.systems/ic/865a816108b31956bd449282e5803ce40007789f/openssl-static-binaries/x86_64-darwin/pocket-ic.gz) | [CHANGELOG.md](CHANGELOG.md#010---2023-08-31)|
 
 After downloading the binary, unzip the downloaded file and make it executable:
 ```bash
@@ -25,6 +26,7 @@ xattr -dr com.apple.quarantine pocket-ic
 to bypass the developer verification from Apple.
 Alternatively, you can open the `pocket-ic` binary by right clicking on it in the Finder and selecting "Open" from the drop-down menu.
 Then, confirm opening this application by clicking "Open" in the dialog that pops up.
+
 
 ## Using PocketIC
 After completion of above steps, you can verify that everything works by running:
@@ -41,6 +43,7 @@ To write canister tests in your projects with PocketIC, it is recommended to use
 * [Pic JS](https://www.npmjs.com/package/@hadronous/pic) for JavaScript/TypeScript
 
 If you want your client library to be listed here, please post to the [Forum](https://forum.dfinity.org/)!
+
 
 ## Why PocketIC?
 Canister developers have several options to test their software, but there are tradeoffs: 
