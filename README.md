@@ -61,3 +61,10 @@ This enables:
 
 ## Source Code
 The source code of the PocketIC server is available on [GitHub](https://github.com/dfinity/ic/tree/master/rs/pocket_ic_server).
+
+
+## Contributing
+Would you like to write canister tests in a different language?
+The PocketIC server has a JSON/REST interface, against which you may implement a user-facing library in any language.
+
+If you decide to contribute, we encourage you to announce it on the [Forum](https://forum.dfinity.org/)!
