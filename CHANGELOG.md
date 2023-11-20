@@ -17,8 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Use `--ttl` to specify for how long the server should be running before it shuts down
     - `--pid` flag is no longer required and discouraged to use from the command line
 - Improved logging support:
-    - Use `POCKET_IC_LOG_DIR` to specify where to store logs
-    - Use e.g., `POCKET_IC_LOG_DIR_LEVELS=trace` to specify the log level of the logs that are written to the log file
+    - Use the `POCKET_IC_LOG_DIR` environment varible to specify where to store logs
+    - Use the environment variable `POCKET_IC_LOG_DIR_LEVELS=trace` to specify the log level of the logs that are written to the log file
 - `read/pub_key` endpoint to retrieve the public key of a subnet
 - `read/get_subnet` endpoint to retrieve the subnet id of a canister
 
