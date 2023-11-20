@@ -42,5 +42,22 @@ To write canister tests in your projects with PocketIC, it is recommended to use
 
 If you want your client library to be listed here, please post to the [Forum](https://forum.dfinity.org/)!
 
+## Why PocketIC?
+Canister developers have several options to test their software, but there are tradeoffs: 
+- Install and test on the **mainnet**: The 'real' experience, but you pay with real cycles.
+- The **replica** provided by DFX: You get the complete stack of a single IC node.
+But therefore, you get no cross- or multisubnet functionality, and likely never will.
+Replica is quite heavyweight too, because the nonessential components are not abstracted away.
+Furthermore, testing with replica is not deterministic. 
+
+Enter **PocketIC**: 
+- *Deterministic*: Synchronous control over the IC's execution environment
+- *Lightweight*: Mocks the consensus and networking layers
+- *Versatile*: Runs as a service on your test system, and accepts HTTP/JSON.
+This enables:
+    - Concurrent and independent IC instances by default - sharing is *possible*
+    - Multi-language support: Anyone can write an integration library against the PocketIC REST-API in any language
+- Support for multiple subnets and Xnet calls
+
 ## Source Code
-The source code of PocketIC is available on [GitHub](https://github.com/dfinity/ic/tree/master/rs/pocket_ic_server).
+The source code of the PocketIC server is available on [GitHub](https://github.com/dfinity/ic/tree/master/rs/pocket_ic_server).
