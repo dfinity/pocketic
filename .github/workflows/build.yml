@@ -4,8 +4,7 @@ name: Build
 on: [push]
 
 env:
-  VERSION: '2.0.1'
-  IMAGE_NAME: 'pocket-ic:${{ env.VERSION }}'
+  IMAGE_NAME: 'pocket-ic:2.0.1'
 
 jobs:
   release:
