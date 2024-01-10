@@ -1,6 +1,7 @@
 name: Build
 
-on: [release]
+# on: [release]
+on: [push]
 
 env:
   VERSION: '2.0.1'
