@@ -18,6 +18,4 @@ jobs:
     - name: Build image
       run: |
         docker build -t ${{ env.IMAGE_NAME }} ./docker
-
-    - name: test
-      run: docker images ls
+        docker images ls
