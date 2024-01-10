@@ -1,0 +1,23 @@
+name: Build
+
+on: [release]
+
+env:
+  VERSION: '2.0.1'
+  IMAGE_NAME: 'pocket-ic:${{ env.VERSION }}'
+
+jobs:
+  release:
+    if: ${{ github.event_name == 'release' }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build image
+      run: |
+        docker build -t ${{ env.IMAGE_NAME }} ./docker
+
+    - name: test
+      run: docker images ls | grep ${{ env.IMAGE_NAME }}
