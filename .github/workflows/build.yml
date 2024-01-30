@@ -1,0 +1,21 @@
+name: Build
+
+# on: [release]
+on: [push]
+
+env:
+  IMAGE_NAME: 'pocket-ic:2.0.1'
+
+jobs:
+  release:
+    # if: ${{ github.event_name == 'release' }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Build image
+      run: |
+        docker build -t ${{ env.IMAGE_NAME }} ./docker
+        docker images ls
