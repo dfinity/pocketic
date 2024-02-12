@@ -31,7 +31,8 @@ After completion of above steps, you can verify that everything works by running
 which prints information on how to use the PocketIC server from the command line.
 
 ### Client Libraries
-To write canister tests in your projects with PocketIC, it is recommended to use one of the client libraries. The following libraries are available:
+To write canister tests in your projects with PocketIC, it is recommended to use one of the client libraries.
+The following libraries are available:
 
 * [PocketIC Rust](https://crates.io/crates/pocket-ic)
 * [PocketIC Python](https://pypi.org/project/pocket-ic/)
@@ -64,5 +65,8 @@ The source code of the PocketIC server is available on [GitHub](https://github.c
 ## Contributing
 Would you like to write canister tests in a different language?
 The PocketIC server has a JSON/REST interface, against which you may implement a user-facing library in any language.
+
+To see a documentation of the server's endpoints, PocketIC offers an endpoint `/api.json`, which will return an OpenAPI specification.
+You can then use tools like the [Swagger Editor](https://editor-next.swagger.io/) to display the returned JSON in a more human readable way.
 
 If you decide to contribute, we encourage you to announce it on the [Forum](https://forum.dfinity.org/)!
