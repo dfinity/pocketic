@@ -5,13 +5,34 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+
+
+## 4.0.0 - 2024-04-30
+
+### Added
+- New endpoints `/instances/<instance_id>/auto_progress` and `/instances/<instance_id>/stop_progress` to make IC instances
+  progress (updating time and executing rounds) automatically.
+- New endpoints `/instances/<instance_id>/api/v2/...` supporting the HTTP interface of the IC as described
+  by the [Interface Specification](https://internetcomputer.org/docs/current/references/ic-interface-spec).
+- Breaking: New subnet specification allowing to set very high instruction limits for (asymptotic) benchmarking canister code.
+- New endpoint `/read_graph/:state_label/:op_id` for polling on a long-running operation. The `state_label` and `op_id` are returned by `ApiResponse::Started{state_label, op_id}`.
+- New CLI option `--port-file` to specify a file to which the PocketIC server port should be written.
+- New endpoints `/http_gateway` and `/http_gateway/:id/stop` to start and stop an HTTP gateway.
+- Breaking: DTS is enabled on a subnet based on a new field `dts_flag` in `SubnetSpec`.
+- New endpoints `submit_ingress_message` (submit an ingress message without executing it) and `await_ingress_message` (execute rounds on the PocketIc instance until the message is executed).
+
+### Fixed
+
+- Potentially breaking: Subnet IDs are derived from the subnets' public keys by default.
+- Potentially breaking: The time of every subnet advances by 1ns before every round execution to make sure the subnet time is strictly increasing in every round.
+
+
 ## 3.0.1 - 2024-02-14
 
 ### Fixed
-- traps in tECDSA calls
-- server rejects jsons containing unimplemented variants of SubnetSpec
-- inspect_message no longer panics when call is rejected
-
+- Traps in tECDSA calls due to malformed tECDSA public key.
+- Server rejects jsons containing unimplemented variants of `SubnetStateConfig`.
+- The `inspect_message` method no longer panics when call is rejected.
 
 ## 3.0.0 - 2024-02-06
 
@@ -66,13 +87,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `read/root_key` endpoint (superseded by `read/pub_key`)
 
 
+
 ## 1.0.0 - 2023-10-12
 
 ### Added
-- Blocking REST-API: Encode IC-call in endpoint, not in body.
+- Blocking REST-API: Encode IC-call in endpoint, not in body
+
 
 
 ## 0.1.0 - 2023-08-31
 
 ### Added
-- Blocking API to make IC-calls to a PocketIC server.
+- Blocking API to make IC-calls to a PocketIC server
