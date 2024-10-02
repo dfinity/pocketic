@@ -35,12 +35,12 @@ jobs:
           pocket-ic-server-version: ${{ matrix.version }}
       - name: Check if the proper PocketIC server version is installed
         run: |
-          actual_pic_ver="$(${POCKET_IC_BIN} --version)"
+          actual_pocket_ic_server_ver="$(${POCKET_IC_BIN} --version)"
 
-          expected_pic_ver="pocket-ic-server ${{ matrix.expected-version }}"
+          expected_pocket_ic_server_ver="pocket-ic-server ${{ matrix.expected-version }}"
 
-          if [ "$actual_pic_ver" != "$expected_pic_ver" ]; then
-            echo "Error: expected PocketIC server version '$expected_pic_ver', but '$actual_pic_ver' found"
+          if [ "$actual_pocket_ic_server_ver" != "$expected_pocket_ic_server_ver" ]; then
+            echo "Error: expected PocketIC server version '$expected_pocket_ic_server_ver', but '$actual_pocket_ic_server_ver' found"
             exit 1
           fi
-          echo "PocketIC server version '$actual_pic_ver' was installed correctly"
+          echo "PocketIC server version '$actual_pocket_ic_server_ver' was installed correctly"
