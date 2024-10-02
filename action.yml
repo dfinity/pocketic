@@ -47,4 +47,4 @@ runs:
         ls -l
         ./pocket-ic --version
 
-        echo "POCKET_IC_BIN=\"$(pwd)/pocket-ic\"" >> $GITHUB_ENV
+        echo "POCKET_IC_BIN=$(echo "$(pwd)/pocket-ic")" >> $GITHUB_ENV
