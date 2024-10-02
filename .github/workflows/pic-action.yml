@@ -1,0 +1,46 @@
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+
+jobs:
+  test_pocket_ic_server_action:
+    runs-on: ${{ matrix.os }}
+    name: Test the PocketIC server action (action.yml)
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: '5.0.0'
+            expected-version: '5.0.0'
+            os: ubuntu-latest
+          - version: '5.0.0'
+            expected-version: '5.0.0'
+            os: macos-latest
+
+          - version: 'latest'
+            expected-version: '6.0.0'
+            os: ubuntu-latest
+          - version: 'latest'
+            expected-version: '6.0.0'
+            os: macos-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install PocketIC server and check its version
+        uses: ./
+        with:
+          pocket-ic-server-version: ${{ matrix.version }}
+      - name: Check if the proper PocketIC server version is installed
+        run: |
+          actual_pic_ver="$(${POCKET_IC_BIN} --version)"
+
+          expected_pic_ver="pocket-ic-server ${{ matrix.expected-version }}"
+
+          if [ "$actual_pic_ver" != "$expected_pic_ver" ]; then
+            echo "Error: expected PocketIC server version '$expected_pic_ver', but '$actual_pic_ver' found"
+            exit 1
+          fi
+          echo "PocketIC server version '$actual_pic_ver' was installed correctly"
