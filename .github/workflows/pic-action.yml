@@ -35,9 +35,6 @@ jobs:
           pocket-ic-server-version: ${{ matrix.version }}
       - name: Check if the proper PocketIC server version is installed
         run: |
-          ls -l /home/runner/work/pocketic/pocketic
-          echo "${POCKET_IC_BIN}"
-          /home/runner/work/pocketic/pocketic/pocket-ic --version
           actual_pic_ver="$(${POCKET_IC_BIN} --version)"
 
           expected_pic_ver="pocket-ic-server ${{ matrix.expected-version }}"
