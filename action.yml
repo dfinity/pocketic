@@ -1,7 +1,7 @@
 name: 'Install PocketIC server'
 description: 'Install the PocketIC server at a particular version'
 inputs:
-  dfx-version:
+  pocket-ic-server-version:
     description: >
       The PocketIC server version to install.
       If "latest" is provided, the latest version will be installed.
@@ -13,10 +13,10 @@ runs:
     - name: Install PocketIC server
       shell: sh
       run: |
-        if [ "${{ inputs.dfx-version }}" = "latest" ]; then
+        if [ "${{ inputs.pocket-ic-server-version }}" = "latest" ]; then
           export POCKET_IC_VERSION="6.0.0"
         else
-          export POCKET_IC_VERSION="${{ inputs.dfx-version }}"
+          export POCKET_IC_VERSION="${{ inputs.pocket-ic-server-version }}"
         fi
 
         echo "POCKET_IC_VERSION is $POCKET_IC_VERSION"
