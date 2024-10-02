@@ -42,8 +42,9 @@ runs:
         fi
 
         gzip -d pocket-ic.gz
+        chmod +x pocket-ic
         echo $(pwd)
         ls -l
-        chmod +x pocket-ic
+        ./pocket-ic --version
 
         echo "POCKET_IC_BIN=\"$(pwd)/pocket-ic\"" >> $GITHUB_ENV
