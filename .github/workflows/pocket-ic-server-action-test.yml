@@ -28,10 +28,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install latest PocketIC server and check its version
-        if: ${{ matrix.version == "" }}
+        if: "${{ matrix.version == '' }}"
         uses: ./
       - name: Install PocketIC server and check its version
-        if: ${{ matrix.version != "" }}
+        if: "${{ matrix.version != '' }}"
         uses: ./
         with:
           pocket-ic-server-version: ${{ matrix.version }}
