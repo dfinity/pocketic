@@ -1,0 +1,44 @@
+name: 'Install PocketIC server'
+description: 'Install the PocketIC server at a particular version'
+inputs:
+  pocket-ic-server-version:
+    description: >
+      The PocketIC server version to install.
+      If omitted, the latest version will be installed.
+    default: '6.0.0'
+
+runs:
+  using: composite
+  steps:
+    - name: Install PocketIC server
+      shell: sh
+      run: |
+        export POCKET_IC_VERSION="${{ inputs.pocket-ic-server-version }}"
+
+        echo "POCKET_IC_VERSION is $POCKET_IC_VERSION"
+
+        if [ "${{ runner.os }}" = 'Linux' ]; then
+          export OS="linux"
+        elif [ "${{ runner.os }}" = 'macOS' ]; then
+          export OS="darwin"
+        else
+          echo "Unsupported OS."
+          exit 1
+        fi
+
+        echo "OS is $OS"
+
+        # Retry up to 10 times. Each attempt has 20 seconds total to complete, 5 seconds of which is to connect.
+        # This uses the default retry delay, which starts at 1s and doubles each time, up to 10 min.
+        if $(curl --fail --silent --show-error --location --retry 10 --connect-timeout 5 --max-time 20 --retry-connrefused https://github.com/dfinity/pocketic/releases/download/${POCKET_IC_VERSION}/pocket-ic-x86_64-${OS}.gz -o pocket-ic.gz); then
+          echo "Successfully downloaded PocketIC server."
+        else
+          echo "Failed to download PocketIC server."
+          exit 1
+        fi
+
+        gzip -d pocket-ic.gz
+        chmod +x pocket-ic
+
+        export POCKET_IC_BIN="$(pwd)/pocket-ic"
+        echo "POCKET_IC_BIN=$POCKET_IC_BIN" >> $GITHUB_ENV

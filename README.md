@@ -2,9 +2,39 @@
 
 PocketIC is a canister smart contract testing solution for the [Internet Computer](https://internetcomputer.org/).
 
+## GitHub Action
+This repository provides a GitHub Action to set up the PocketIC server.
+
+### Usage
+To use this action in your GitHub workflow, include it as a step in your workflow configuration:
+
+```yml
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    - name: Install PocketIC server
+      uses: dfinity/pocketic@main
+    - name: Confirm successful installation
+      run: "${POCKET_IC_BIN}" --version
+```
+
+The action is designed to run on both ubuntu- and macos- runners.
+
+### Specifying a PocketIC server version
+You can specify a particular version of the PocketIC server to install using the `pocket-ic-server-version` input:
+
+```yml
+    - name: Install PocketIC server
+      uses: dfinity/pocketic@main
+      with: 
+        pocket-ic-server-version: "6.0.0"
+```
 
 ## Download the PocketIC Server
-You can find the versions of the PocketIC server under the [Releases](https://github.com/dfinity/pocketic/releases) tab on the right.
+Alternatively to using the GitHub Action, you can download the PocketIC server binary for a particular version in the [Releases](https://github.com/dfinity/pocketic/releases) tab on the right.
 For macOS, choose `pocket-ic-x86_64-darwin.gz`, for Linux, choose `pocket-ic-x86_64-linux.gz`.
 
 Save the downloaded file as `pocket-ic.gz`, decompress it, and make it executable:
@@ -14,6 +44,12 @@ gzip -d pocket-ic.gz
 chmod +x pocket-ic
 ```
 
+Finally, export the `POCKET_IC_BIN` environment variable to point to the (absolute) path of the PocketIC server binary:
+
+```bash
+export POCKET_IC_BIN="$(pwd)/pocket-ic"
+```
+
 On **macOS**, you might have to additionally run:
 ```bash
 xattr -dr com.apple.quarantine pocket-ic
@@ -21,7 +57,6 @@ xattr -dr com.apple.quarantine pocket-ic
 to bypass the developer verification from Apple.
 Alternatively, you can open the `pocket-ic` binary by right clicking on it in the Finder and selecting "Open" from the drop-down menu.
 Then, confirm opening this application by clicking "Open" in the dialog that pops up.
-
 
 ## Using PocketIC
 After completion of above steps, you can verify that everything works by running:
