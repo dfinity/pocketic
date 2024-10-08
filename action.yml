@@ -4,8 +4,8 @@ inputs:
   pocket-ic-server-version:
     description: >
       The PocketIC server version to install.
-      If "latest" is provided, the latest version will be installed.
-    default: 'latest'
+      If omitted, the latest version will be installed.
+    default: '6.0.0'
 
 runs:
   using: composite
@@ -13,11 +13,7 @@ runs:
     - name: Install PocketIC server
       shell: sh
       run: |
-        if [ "${{ inputs.pocket-ic-server-version }}" = "latest" ]; then
-          export POCKET_IC_VERSION="6.0.0"
-        else
-          export POCKET_IC_VERSION="${{ inputs.pocket-ic-server-version }}"
-        fi
+        export POCKET_IC_VERSION="${{ inputs.pocket-ic-server-version }}"
 
         echo "POCKET_IC_VERSION is $POCKET_IC_VERSION"
 
