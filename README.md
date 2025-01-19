@@ -73,6 +73,7 @@ The following libraries are available:
 * [PocketIC Python](https://pypi.org/project/pocket-ic/)
 * [Pic JS](https://www.npmjs.com/package/@hadronous/pic) for JavaScript/TypeScript
 * [PocketIC Golang](https://pkg.go.dev/github.com/aviate-labs/agent-go/pocketic)
+* [PocketIC ICP.NET (C#)](https://www.nuget.org/packages/EdjCase.ICP.PocketIC)
 
 For Rust and Python, make sure to download a server version that is [compatible](https://docs.google.com/document/d/1VYmHUTjrgbzRHtsAyRrI5cj-gWGs7ktTnutPvUMJioU). 
 If you want your client library to be listed here, please post to the [Forum](https://forum.dfinity.org/)!
