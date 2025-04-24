@@ -19,9 +19,9 @@ jobs:
             expected-version: '5.0.0'
             os: macos-latest
 
-          - expected-version: '8.0.0'
+          - expected-version: '9.0.0'
             os: ubuntu-latest
-          - expected-version: '8.0.0'
+          - expected-version: '9.0.0'
             os: macos-latest
 
     steps:
