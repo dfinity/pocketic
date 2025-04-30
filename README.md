@@ -71,7 +71,7 @@ The following libraries are available:
 
 * [PocketIC Rust](https://crates.io/crates/pocket-ic)
 * [PocketIC Python](https://pypi.org/project/pocket-ic/)
-* [Pic JS](https://www.npmjs.com/package/@hadronous/pic) for JavaScript/TypeScript
+* [Pic JS](https://www.npmjs.com/package/@dfinity/pic) for JavaScript/TypeScript
 * [PocketIC Golang](https://pkg.go.dev/github.com/aviate-labs/agent-go/pocketic)
 * [PocketIC ICP.NET (C#)](https://www.nuget.org/packages/EdjCase.ICP.PocketIC)
 
