@@ -30,7 +30,7 @@ You can specify a particular version of the PocketIC server to install using the
     - name: Install PocketIC server
       uses: dfinity/pocketic@main
       with: 
-        pocket-ic-server-version: "9.0.0"
+        pocket-ic-server-version: "9.0.1"
 ```
 
 ## Download the PocketIC Server
