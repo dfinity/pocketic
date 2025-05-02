@@ -5,7 +5,7 @@ inputs:
     description: >
       The PocketIC server version to install.
       If omitted, the latest version will be installed.
-    default: '9.0.0'
+    default: '9.0.1'
 
 runs:
   using: composite
