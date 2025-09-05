@@ -11,7 +11,7 @@ runs:
   using: composite
   steps:
     - name: Install PocketIC server
-      shell: sh
+      shell: bash
       run: |
         export POCKET_IC_VERSION="${{ inputs.pocket-ic-server-version }}"
 
