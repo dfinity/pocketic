@@ -26,6 +26,16 @@ jobs:
           - expected-version: '9.0.3'
             os: macos-latest # arm64
 
+          - version: '9152ba15ab6cc3c12eb407e13f8ee483a1d5723c'
+            expected-version: '10.0.0'
+            os: ubuntu-latest
+          - version: '9152ba15ab6cc3c12eb407e13f8ee483a1d5723c'
+            expected-version: '10.0.0'
+            os: macos-13 # x86_64
+          - version: '9152ba15ab6cc3c12eb407e13f8ee483a1d5723c'
+            expected-version: '10.0.0'
+            os: macos-latest # arm64
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
