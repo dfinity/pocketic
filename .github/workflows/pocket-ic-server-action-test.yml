@@ -17,7 +17,7 @@ jobs:
             os: ubuntu-latest
           - version: '5.0.0'
             expected-version: '5.0.0'
-            os: macos-latest
+            os: macos-13 # x86_64
 
           - expected-version: '9.0.3'
             os: ubuntu-latest
