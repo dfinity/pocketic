@@ -22,7 +22,9 @@ jobs:
           - expected-version: '9.0.3'
             os: ubuntu-latest
           - expected-version: '9.0.3'
-            os: macos-latest
+            os: macos-13 # x86_64
+          - expected-version: '9.0.3'
+            os: macos-latest # arm64
 
     steps:
       - name: Checkout
@@ -42,7 +44,7 @@ jobs:
           expected_pocket_ic_server_ver="pocket-ic-server ${{ matrix.expected-version }}"
 
           if [ "$actual_pocket_ic_server_ver" != "$expected_pocket_ic_server_ver" ]; then
-            echo "Error: expected PocketIC server version '$expected_pocket_ic_server_ver', but '$actual_pocket_ic_server_ver' found"
+            echo "Error: expected PocketIC server version '$expected_pocket_ic_server_ver', but got '$actual_pocket_ic_server_ver'"
             exit 1
           fi
           echo "PocketIC server version '$actual_pocket_ic_server_ver' was installed correctly"
