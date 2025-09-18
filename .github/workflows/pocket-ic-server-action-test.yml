@@ -26,13 +26,13 @@ jobs:
           - expected-version: '9.0.3'
             os: macos-latest # arm64
 
-          - version: '9152ba15ab6cc3c12eb407e13f8ee483a1d5723c'
+          - version: 'ee4c728d94b10437f41edf564650ac63cd0c0c5d'
             expected-version: '10.0.0'
             os: ubuntu-latest
-          - version: '9152ba15ab6cc3c12eb407e13f8ee483a1d5723c'
+          - version: 'ee4c728d94b10437f41edf564650ac63cd0c0c5d'
             expected-version: '10.0.0'
             os: macos-13 # x86_64
-          - version: '9152ba15ab6cc3c12eb407e13f8ee483a1d5723c'
+          - version: 'ee4c728d94b10437f41edf564650ac63cd0c0c5d'
             expected-version: '10.0.0'
             os: macos-latest # arm64
 
