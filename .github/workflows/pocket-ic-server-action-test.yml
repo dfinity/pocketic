@@ -19,11 +19,11 @@ jobs:
             expected-version: '5.0.0'
             os: macos-13 # x86_64
 
-          - expected-version: '9.0.3'
+          - expected-version: '10.0.0'
             os: ubuntu-latest
-          - expected-version: '9.0.3'
+          - expected-version: '10.0.0'
             os: macos-13 # x86_64
-          - expected-version: '9.0.3'
+          - expected-version: '10.0.0'
             os: macos-latest # arm64
 
           - version: 'ee4c728d94b10437f41edf564650ac63cd0c0c5d'
