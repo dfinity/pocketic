@@ -11,7 +11,7 @@ runs:
   using: composite
   steps:
     - name: Install PocketIC server
-      shell: sh
+      shell: bash
       run: |
         export POCKET_IC_VERSION="${{ inputs.pocket-ic-server-version }}"
 
@@ -26,11 +26,30 @@ runs:
           exit 1
         fi
 
+        if [ "${{ runner.arch }}" = 'X64' ]; then
+          export ARCH="x86_64"
+        elif [ "${{ runner.arch }}" = 'ARM64' ]; then
+          export ARCH="arm64"
+        else
+          echo "Unsupported CPU architecture."
+          exit 1
+        fi
+
+        # if `${POCKET_IC_VERSION}` is a git hash, then use CDN;
+        # otherwise use a GitHub release.
+        if [[ "${POCKET_IC_VERSION}" =~ ^[0-9a-f]{40,40}$ ]]; then
+          URL="https://download.dfinity.systems/ic/${POCKET_IC_VERSION}/binaries/${ARCH}-${OS}/pocket-ic.gz"
+        else
+          URL="https://github.com/dfinity/pocketic/releases/download/${POCKET_IC_VERSION}/pocket-ic-${ARCH}-${OS}.gz"
+        fi
+
         echo "OS is $OS"
+        echo "ARCH is $ARCH"
+        echo "URL is $URL"
 
         # Retry up to 10 times. Each attempt has 20 seconds total to complete, 5 seconds of which is to connect.
         # This uses the default retry delay, which starts at 1s and doubles each time, up to 10 min.
-        if $(curl --fail --silent --show-error --location --retry 10 --connect-timeout 5 --max-time 20 --retry-connrefused https://github.com/dfinity/pocketic/releases/download/${POCKET_IC_VERSION}/pocket-ic-x86_64-${OS}.gz -o pocket-ic.gz); then
+        if $(curl --fail --silent --show-error --location --retry 10 --connect-timeout 5 --max-time 20 --retry-connrefused "${URL}" -o pocket-ic.gz); then
           echo "Successfully downloaded PocketIC server."
         else
           echo "Failed to download PocketIC server."
