@@ -96,6 +96,8 @@ This enables:
     - Multi-language support: Anyone can write an integration library against the PocketIC REST-API in any language
 - Support for multiple subnets and Xnet calls
 
+**Note**: As of DFX v0.26.0, [`dfx start`](https://internetcomputer.org/docs/building-apps/developer-tools/dfx/dfx-start) uses PocketIC by default to run a local development environment (previously this was done with `dfx start --pocketic`). The [`dfx replica`](https://internetcomputer.org/docs/building-apps/developer-tools/dfx/dfx-replica) command has been removed, and there is currently no specific DFX command to start the local replica instead.
+
 ## Source Code
 The source code of the PocketIC server is available on [GitHub](https://github.com/dfinity/ic/tree/master/rs/pocket_ic_server).
 
