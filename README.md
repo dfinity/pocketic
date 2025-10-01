@@ -35,7 +35,8 @@ You can specify a particular version of the PocketIC server to install using the
 
 ## Download the PocketIC Server
 Alternatively to using the GitHub Action, you can download the PocketIC server binary for a particular version in the [Releases](https://github.com/dfinity/pocketic/releases) tab on the right.
-For macOS, choose `pocket-ic-x86_64-darwin.gz`, for Linux, choose `pocket-ic-x86_64-linux.gz`.
+For macOS, choose `pocket-ic-arm64-darwin.gz` or `pocket-ic-x86_64-darwin.gz`, for Linux, choose `pocket-ic-x86_64-linux.gz`.
+For (Linux) containers on macOS powered by arm64, choose `pocket-ic-arm64-linux.gz`.
 
 Save the downloaded file as `pocket-ic.gz`, decompress it, and make it executable:
 
@@ -82,19 +83,18 @@ If you want your client library to be listed here, please post to the [Forum](ht
 ## Why PocketIC?
 Canister developers have several options to test their software, but there are tradeoffs: 
 - Install and test on the **mainnet**: The 'real' experience, but you pay with real cycles.
-- The **replica** provided by DFX: You get the complete stack of a single IC node.
-But therefore, you get no cross- or multisubnet functionality, and likely never will.
-Replica is quite heavyweight too, because the nonessential components are not abstracted away.
-Furthermore, testing with replica is not deterministic. 
+- Install and test on a **testnet**: Very close to the 'real' experience, but complex to set up.
+A testnet is quite heavyweight, too, because nonessential components are not abstracted away.
+Furthermore, testing on a testnet is not deterministic.
 
 Enter **PocketIC**: 
-- *Deterministic*: Synchronous control over the IC's execution environment
-- *Lightweight*: Mocks the consensus and networking layers
+- *Deterministic*: Synchronous control over the IC's execution environment.
+- *Lightweight*: Mocks the consensus and networking layers.
 - *Versatile*: Runs as a service on your test system, and accepts HTTP/JSON.
 This enables:
-    - Concurrent and independent IC instances by default - sharing is *possible*
-    - Multi-language support: Anyone can write an integration library against the PocketIC REST-API in any language
-- Support for multiple subnets and Xnet calls
+    - Concurrent and independent IC instances by default - sharing is *possible*.
+    - Multi-language support: Anyone can write an integration library against the PocketIC REST-API in any language.
+- Support for multiple subnets and Xnet calls.
 
 ## Source Code
 The source code of the PocketIC server is available on [GitHub](https://github.com/dfinity/ic/tree/master/rs/pocket_ic_server).
